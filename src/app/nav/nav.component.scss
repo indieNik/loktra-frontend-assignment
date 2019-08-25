@@ -1,0 +1,24 @@
+@import "../../../src/styles.scss";
+
+header {
+    width: $header-width;
+    height: $header-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $dark;
+    box-shadow: $box-shadow-v;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+        margin-left: $body-margin-left + 1vw;
+    }
+    .links {
+        @extend .flex-vhc ;
+        margin-right: $body-margin-right + 1vw;
+        li {
+            margin: 0 0 0 20px;
+        }
+    }
+}

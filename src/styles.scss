@@ -2,6 +2,27 @@
 
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
 
+// Application Wide Variables
+
+$body-width: 80vw;
+$body-height: 100vh;
+$body-gap-top: 7vh;
+$body-margin-left: (100vw - $body-width ) / 2;
+$body-margin-right: $body-margin-left;
+
+$header-width: 100vw;
+$header-height: $body-gap-top - 1vh;
+// $header-margin-h: $body-width;
+
+
+$dark: #333;
+$gray: #ccc;
+$light: #fcfcfc;
+
+$box-shadow-h: 0 0 50px 20px $gray;
+$box-shadow-v: 0 0 20px 20px $gray;
+
+// Reset Styles
 * {
     margin: 0;
     border: 0;
@@ -11,9 +32,48 @@
     transition: all 0.3s ease-in-out;
 }
 
+a {
+    text-decoration: none;
+    color: $light;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+li {
+    list-style: none;
+}
+
 body {
-    width: 80vw;
-    height: 100vh;
+    width: $body-width;
+    height: $body-height;
     margin: auto;
-    box-shadow: 0 0 50px 20px #ccc;
+    box-shadow: $box-shadow-h;
+    section {
+        padding: 100px;
+        padding-top: $body-gap-top;
+        height: 100%;
+        overflow-x: scroll;
+    }
+}
+
+// Generic CSS Snippets
+.d-flex {
+    display: flex;
+}
+
+.flex-vc {
+    display: flex;
+    align-items: center;
+}
+
+.flex-hc {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-vhc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
