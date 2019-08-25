@@ -1,0 +1,9 @@
+<img class="avatar" src="{{this.person.avatar}}" alt="{{this.person.name}}">
+<div class="details">
+    <div class="name">{{this.person.name}}</div>
+    <div class="email">{{this.person.email}}</div>
+    <div class="dob">{{this.person.dob | age}} years</div>
+</div>
+<div class="delete" (click)="deletePerson.next(this.person)">
+  Delete
+</div>

@@ -19,13 +19,11 @@ export class HomeComponent implements OnInit {
   getPeople() {
     this.data.getPeople().subscribe(data => {
       this.people = data;
-      console.log("this.people: ", this.people);
     })
   }
 
   removePerson(_person) {
-    this.data.deletePerson(_person.id).subscribe(data => {
-      console.log("Deleted Count: ", data);
+    this.data.deletePerson(_person.id).subscribe(_data => {
       this.getPeople();
     })
   }

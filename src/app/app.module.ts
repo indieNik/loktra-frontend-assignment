@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { NewPersonComponent } from './new-person/new-person.component';
 import { AgePipe } from './age.pipe';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AgePipe } from './age.pipe';
     HomeComponent,
     AboutComponent,
     NewPersonComponent,
-    AgePipe
+    AgePipe,
+    CardComponent
   ],
   imports: [
     BrowserModule,
