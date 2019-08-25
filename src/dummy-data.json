@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Thor",
+        "email": "thor@avengers.com",
+        "dob": "1968-10-08T00:00:00.000Z",
+        "avatar": "https://image.shutterstock.com/image-photo/tokyo-japan-april-20-2017-600w-1036342015.jpg",
+        "country": "US",
+        "id": 1
+    },
+    {
+        "name": "Captain America",
+        "email": "cap@avengers.com",
+        "dob": "1918-07-04T00:00:00.000Z",
+        "avatar": "https://image.shutterstock.com/z/stock-photo-bangkok-thailand-december-close-up-shot-of-captain-america-civil-war-superheros-figure-1078948385.jpg",
+        "country": "US",
+        "id": 2
+    },
+    {
+        "name": "Iron Man",
+        "email": "ironman@avengers.com",
+        "dob": "1965-04-04T00:00:00.000Z",
+        "avatar": "http://getwallpapers.com/wallpaper/full/8/6/6/818583-popular-iron-man-suit-wallpapers-1920x1080-meizu.jpg",
+        "country": "US",
+        "id": 3
+    }
+]

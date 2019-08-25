@@ -1,3 +1,26 @@
-<p>
-  home works!
-</p>
+
+<div class="container">
+  <div class="header-section">
+    <h1>
+      List of SuperHumans
+    </h1>
+      <a [routerLink]="[ '/new' ]">
+        <button>
+            + Create
+        </button>
+      </a>
+  </div>
+  <div class="list-section">
+    <div class="card" *ngFor="let person of people">
+      <img class="avatar" src="{{this.person.avatar}}" alt="{{this.person.name}}">
+      <div class="details">
+          <div class="name">{{this.person.name}}</div>
+          <div class="email">{{this.person.email}}</div>
+          <div class="dob">{{this.person.dob | age}} years</div>
+      </div>
+      <div class="delete" (click)="removePerson(this.person)">
+        Delete
+      </div>
+    </div>
+  </div>
+</div>
