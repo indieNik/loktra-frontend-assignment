@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
+
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    width: 80vw;
+    height: 100vh;
+    margin: auto;
+    box-shadow: 0 0 50px 20px #ccc;
+}
