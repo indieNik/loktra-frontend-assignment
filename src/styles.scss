@@ -73,7 +73,7 @@ body {
         padding: 100px;
         padding-top: $body-gap-top;
         height: 100%;
-        overflow-x: scroll;
+        overflow-y: scroll;
     }
 }
 
@@ -96,4 +96,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+// Mobile Styles
+@media (min-width: 320px) and (max-width: 767px) {
+    body {
+        width: 100vw;
+        section {
+            padding: 0px;
+            padding-top: 7vh;
+        }
+    }
 }

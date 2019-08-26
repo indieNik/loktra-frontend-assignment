@@ -77,3 +77,20 @@
         }
     }
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .container {
+        .form-section {
+            margin: 1vh;
+            .form-group {
+                width: 90vw;
+                justify-content: space-between;
+            }
+        }
+        .preview-section {
+            .card {
+                width: 90vw;
+            }
+        }
+    }
+}

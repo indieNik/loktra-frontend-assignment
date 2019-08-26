@@ -79,11 +79,11 @@
       Preview
     </h1>
     <div class="card">
-      <img class="avatar" src="{{newForm.controls.avatar.value}}" alt="{{newForm.controls.name.value}}">
+      <img class="avatar" *ngIf="newForm.controls.avatar.value" src="{{newForm.controls.avatar.value}}" alt="{{newForm.controls.name.value}}">
       <div class="details">
           <div class="name">{{newForm.controls.name.value}}</div>
           <div class="email">{{newForm.controls.email.value}}</div>
-          <div class="dob">{{newForm.controls.dob.value | age}} years, {{newForm.controls.country.value}}</div>
+          <div class="dob" *ngIf="newForm.controls.dob.value | age">{{newForm.controls.dob.value | age}} years, {{newForm.controls.country.value}}</div>
       </div>
     </div>
   </div>

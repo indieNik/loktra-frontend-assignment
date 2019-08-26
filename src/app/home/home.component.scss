@@ -37,3 +37,24 @@
         }
     }
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .container {
+        padding: 50px 10px ;
+    
+        .list-section {
+            // @extend .flex-vhc;
+            flex-flow: wrap;
+            margin-top: 5vh;
+            .card {
+                // @extend .flex-vc;
+                justify-content: space-evenly;
+                width: 100vw;
+                height: 15vh;
+                margin: 2vh 0;
+                padding: 0;
+                box-shadow: $box-shadow-c;
+            }
+        }
+    }
+}
