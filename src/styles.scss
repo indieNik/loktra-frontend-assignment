@@ -19,6 +19,8 @@ $dark: #333;
 $gray: #ccc;
 $lightgray: #eee;
 $light: #fcfcfc;
+$success: lightgreen;
+$danger: lightcoral;
 
 $box-shadow-h: 0 0 50px 20px $gray;
 $box-shadow-v: 0 0 20px 20px $gray;
@@ -45,6 +47,21 @@ a {
 
 li {
     list-style: none;
+}
+
+.button {
+    background-color: transparent;
+    color: $danger;
+    border: 2px solid $danger;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 0.8em;
+    &:hover {
+        background-color: $danger;
+        color: #fff;
+    }
 }
 
 body {

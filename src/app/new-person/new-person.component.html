@@ -1,3 +1,80 @@
-<p>
-  new-person works!
-</p>
+<div class="container">
+  <div class="header-section">
+    <h1>
+      Create new SuperHero
+    </h1>
+  </div>
+  <form [formGroup]="newForm" (ngSubmit)="onSubmit()" class="form-section">
+    <div class="form-group">
+      <label for="name">
+        Name
+      </label>
+      <input id="name" type="text" formControlName="name" class="form-input" [class.error]="submitted && newForm.controls.name.errors">
+    </div>
+    <div *ngIf="submitted && newForm.controls.name.errors" class="error">
+      <p *ngIf="newForm.controls.name.errors.required">
+        Name cannot be blank!
+      </p>
+    </div>
+    <div class="form-group">
+      <label for="email">
+        Email
+      </label>
+      <input id="email" type="text" formControlName="email" class="form-input" [class.error]="submitted && newForm.controls.email.errors">
+    </div>
+    <div *ngIf="submitted && newForm.controls.email.errors" class="error">
+      <p *ngIf="newForm.controls.email.errors.required">
+        Email cannot be blank!
+      </p>
+    </div>
+    <div class="form-group">
+      <label for="dob">
+        DOB
+      </label>
+      <input id="dob" type="text" formControlName="dob" placeholder="YYYY-MM-DD" class="form-input" [class.error]="submitted && newForm.controls.dob.errors">
+    </div>
+    <div *ngIf="submitted && newForm.controls.dob.errors" class="error">
+      <p *ngIf="newForm.controls.dob.errors.required">
+        Date of Birth cannot be blank!
+      </p>
+    </div>
+    <div class="form-group">
+      <label for="avatar">
+        Avatar
+      </label>
+      <input id="avatar" type="text" formControlName="avatar" class="form-input" [class.error]="submitted && newForm.controls.avatar.errors">
+    </div>
+    <div *ngIf="submitted && newForm.controls.avatar.errors" class="error">
+      <p *ngIf="newForm.controls.avatar.errors.required">
+        Avatar cannot be blank!
+      </p>
+    </div>
+    <div class="form-group">
+      <label for="country">
+        Country
+      </label>
+      <input id="country" type="text" formControlName="country" class="form-input" [class.error]="submitted && newForm.controls.country.errors">
+    </div>
+    <div *ngIf="submitted && newForm.controls.country.errors" class="error">
+      <p *ngIf="newForm.controls.country.errors.required">
+        Country cannot be blank!
+      </p>
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Create" class="button submit">
+    </div>
+  </form>
+  <div class="preview-section">
+    <h1>
+      Preview
+    </h1>
+    <div class="card">
+      <img class="avatar" src="{{newForm.controls.avatar.value}}" alt="{{newForm.controls.name.value}}">
+      <div class="details">
+          <div class="name">{{newForm.controls.name.value}}</div>
+          <div class="email">{{newForm.controls.email.value}}</div>
+          <div class="dob">{{newForm.controls.dob.value | age}} years</div>
+      </div>
+    </div>
+  </div>
+</div>

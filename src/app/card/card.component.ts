@@ -11,7 +11,7 @@ export class CardComponent implements OnInit {
   @Input() person: string;
   @Output() deletePerson = new EventEmitter;
   
-  constructor(private data: DataService) { }
+  constructor() { }
 
   ngOnInit() {
   }

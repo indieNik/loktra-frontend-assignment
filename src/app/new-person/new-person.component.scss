@@ -1,0 +1,79 @@
+@import '../../styles.scss';
+@import '../card/card.component.scss';
+
+.container {
+    padding: 50px 10px ;
+    .header-section {
+        @extend .flex-vc ;
+    }
+    .form-section {
+        margin: 5vh;
+        @extend .flex-hc;
+        flex-direction: column;
+        .form-group {
+            width: 40vw;
+            margin: 1vh auto;
+            @extend .flex-vc;
+            justify-content: space-around;
+            padding: 20px;
+            box-shadow: $box-shadow-c;
+            label {
+                font-weight: 600;
+                margin-right: 10px;
+            }
+            .form-input {
+                border-bottom: 2px solid $success;
+                width: 70%;
+                height: 2.5em;
+                &.error {
+                    border-bottom: 2px solid $danger;
+                }
+                &:focus {
+                    outline: 1px solid #fcfcfc;
+                }
+            }
+            .submit {
+                @extend .button ;
+                width: 100%;
+                color: $dark;
+                border-color: $success;
+                &:hover {
+                    background-color: $success;
+                    color: #fff;
+                }
+            }
+            &:hover {
+                box-shadow: $box-shadow-hover;
+            }
+        }
+        .error {
+            @extend .flex-vhc;
+            font-size: 0.8em;
+            color: $danger;
+            width: 40vw;
+            margin: 1vh auto;
+        }
+    }
+    .preview-section {
+        h1 {
+            margin-bottom: 5vh;
+        }
+        .card {
+            @extend .flex-vc;
+            justify-content: space-evenly;
+            width: 40vw;
+            height: 15vh;
+            margin: 1vh auto;
+            padding: 0 20px;
+            box-shadow: $box-shadow-c;
+            cursor: pointer;
+            &:hover {
+                box-shadow: $box-shadow-hover;
+                .avatar {
+                    border: 2px solid tomato;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
