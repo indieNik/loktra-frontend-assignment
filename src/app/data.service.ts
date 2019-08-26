@@ -20,8 +20,8 @@ export class DataService {
     return this.http.delete("https://tekdi-challenges.appspot.com/api/People/" + id);
   }
   
-  editPerson(person: object) {
-    return this.http.put("https://tekdi-challenges.appspot.com/api/People", person);
+  editPerson(person: any) {
+    return this.http.put("https://tekdi-challenges.appspot.com/api/People/" + person.id, person);
   }
 
   newPerson(person: object) {

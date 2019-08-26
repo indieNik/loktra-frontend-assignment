@@ -2,7 +2,7 @@
 <div class="details">
     <div class="name" (click)="editPerson(this.person)" >{{this.person.name}}</div>
     <div class="email">{{this.person.email}}</div>
-    <div class="dob">{{this.person.dob | age}} years</div>
+    <div class="dob">{{this.person.dob | age}} years, {{this.person.country}}</div>
 </div>
 <div class="delete" (click)="deletePerson.next(this.person)">
   Delete

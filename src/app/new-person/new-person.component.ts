@@ -14,6 +14,7 @@ export class NewPersonComponent implements OnInit {
   submitted = false;
   success = false;
   createState = true;
+  updatePersonID;
 
   constructor(
       private formBuilder: FormBuilder,
@@ -36,15 +37,23 @@ export class NewPersonComponent implements OnInit {
     if( this.newForm.invalid) {
       return;
     } else {
-      this.data.newPerson({
+      let newPerson: any = {
         name: this.newForm.controls.name.value,
         email: this.newForm.controls.email.value,
         avatar: this.newForm.controls.avatar.value,
         dob: this.newForm.controls.dob.value,
         country: this.newForm.controls.country.value,
-      }).subscribe(data => {
-        this.router.navigateByUrl('')
-      })
+      }
+      if(!this.createState) {
+        newPerson.id = this.updatePersonID;
+        this.data.editPerson(newPerson).subscribe(data => {
+          this.router.navigateByUrl('')
+        })
+      } else {
+        this.data.newPerson(newPerson).subscribe(data => {
+          this.router.navigateByUrl('')
+        })
+      }
     }
 
     this.success = true;
@@ -54,6 +63,7 @@ export class NewPersonComponent implements OnInit {
     this.route.paramMap.subscribe(paramMap => {
       let person = paramMap['params'];
       if(person.id) {
+        this.updatePersonID = parseInt(person.id);
         this.createState = false;
         this.newForm.controls.name.setValue(person.name);
         this.newForm.controls.email.setValue(person.email);
