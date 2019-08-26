@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class CardComponent implements OnInit {
 
-  @Input() person: string;
+  @Input() person: any;
   @Output() deletePerson = new EventEmitter;
   
   constructor(
