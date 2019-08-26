@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../data.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-new-person',
@@ -13,11 +13,13 @@ export class NewPersonComponent implements OnInit {
   newForm: FormGroup;
   submitted = false;
   success = false;
+  createState = true;
 
   constructor(
       private formBuilder: FormBuilder,
       private data: DataService,
-      private router: Router
+      private router: Router,
+      private route: ActivatedRoute
     ) {
     this.newForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -49,6 +51,17 @@ export class NewPersonComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(paramMap => {
+      let person = paramMap['params'];
+      if(person.id) {
+        this.createState = false;
+        this.newForm.controls.name.setValue(person.name);
+        this.newForm.controls.email.setValue(person.email);
+        this.newForm.controls.avatar.setValue(person.avatar);
+        this.newForm.controls.dob.setValue(person.dob);
+        this.newForm.controls.country.setValue(person.country);
+      }
+    })
   }
 
 }

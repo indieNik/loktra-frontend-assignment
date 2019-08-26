@@ -1,7 +1,12 @@
 <div class="container">
   <div class="header-section">
     <h1>
-      Create new SuperHero
+      <ng-container *ngIf="this.createState; else upateTemplate">
+          Create new SuperHero
+      </ng-container>
+      <ng-template #upateTemplate>
+          Update SuperHero
+      </ng-template>
     </h1>
   </div>
   <form [formGroup]="newForm" (ngSubmit)="onSubmit()" class="form-section">

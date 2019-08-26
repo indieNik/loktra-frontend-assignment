@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -11,7 +11,13 @@ export class CardComponent implements OnInit {
   @Input() person: string;
   @Output() deletePerson = new EventEmitter;
   
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
+
+  editPerson(_person) {
+    this.router.navigate(['/edit', _person])
+  }
 
   ngOnInit() {
   }
